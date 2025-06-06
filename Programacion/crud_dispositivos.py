@@ -1,46 +1,23 @@
 from dispositivos import dispositivos
 
-def listar_dispositivos():
-
-    if dispositivos:
-
-        print("Dispositivos disponibles: ")
-
-        for nombre in dispositivos.keys():
-            print(f"  - {nombre} ")
-
+def cambiar_estado(nombre, nuevo_estado=False):
+    if nombre in dispositivos:
+        dispositivos[nombre]["estado"] = nuevo_estado
+        print(f"'{nombre}' ahora está {'encendido' if nuevo_estado else 'apagado'}.")
     else:
+        print(f"Dispositivo '{nombre}' no encontrado.")
 
-        print("No hay dispositivos disponibles")
-
-
-def buscar_dispositivos(nombre_dispositivo):
-    listar_dispositivos()
-    if nombre_dispositivo in dispositivos:
-       
-       return f"el dispositivos{nombre_dispositivo} fue encontrado"
+def modificar_dispositivo(nombre, **kwargs):
+    if nombre in dispositivos:
+        dispositivos[nombre].update(kwargs)
+        print(f"'{nombre}' actualizado: {kwargs}")
     else:
-        return f"el dispositivos{nombre_dispositivo} no fue encontrado"
-    
-    
-def agregar_dispositivos(nuevo_dispositivo):
+        print(f"Dispositivo '{nombre}' no encontrado.")
 
-    if  nuevo_dispositivo in dispositivos:
-       return "ya se encuentra este dispositivo "
+def consultar_estado(nombre):
+    if nombre in dispositivos:
+        print(f"Estado de '{nombre}':")
+        for clave, valor in dispositivos[nombre].items():
+            print(f"  {clave}: {valor}")
     else:
-        dispositivos[nuevo_dispositivo]={"datos":"dato"}
-
-    listar_dispositivos()
-
-    
-
-def eliminar_dispositivos(dispositivo_eliminado):
-     
-    if dispositivo_eliminado in dispositivos:
-        del dispositivos[dispositivo_eliminado]
-        print(f"Dispositivo '{dispositivo_eliminado}' eliminado exitosamente.")
-    else:
-        print(f"El dispositivo '{dispositivo_eliminado}' no fue encontrado.")
-    
-    listar_dispositivos()
-
+        print(f"Dispositivo '{nombre}' no encontrado.")
