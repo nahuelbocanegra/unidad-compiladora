@@ -1,4 +1,3 @@
-from dispositivos import dispositivos
 from crud_dispositivos import (
     listar_dispositivos,
     buscar_dispositivos,
@@ -28,7 +27,7 @@ from crud_dispositivos import (
             
 
 #             if opcion == 1:
-#                 listar_dispositivos()
+#                 listar_dispositivo23s()
 #             elif opcion == 2:
 #                 nombre_dispositivo=input("Ingrese el nombre de dispositivo que desea buscar: ")
 #                 print(buscar_dispositivos(nombre_dispositivo))

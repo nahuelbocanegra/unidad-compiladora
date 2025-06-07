@@ -51,10 +51,10 @@ def cambiar_estado(nombre, nuevo_estado=False):
     else:
         print(f"Dispositivo '{nombre}' no encontrado.")
 
-def modificar_dispositivo(nombre, **kwargs):
+def modificar_dispositivo(nombre,modo):
     if nombre in dispositivos:
-        dispositivos[nombre].update(kwargs)
-        print(f"'{nombre}' actualizado: {kwargs}")
+        dispositivos[nombre].update(modo)
+        print(f"'{nombre}' actualizado: {modo}")
     else:
         print(f"Dispositivo '{nombre}' no encontrado.")
 
