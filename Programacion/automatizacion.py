@@ -8,3 +8,4 @@ def automatizar_luz(presencia):
     else:
         cambiar_estado("luz", False)
         print("Sin presencia. Luz apagada.")
+
