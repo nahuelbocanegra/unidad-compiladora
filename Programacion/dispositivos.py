@@ -5,6 +5,7 @@ dispositivos = {
         "marca": "LG",
         "modelo": "DualCool Artcool",
         "temperatura media": 20,
+        "control/consumo":"auto",
         "modo": "auto",
         "estado": False
     },
@@ -12,7 +13,8 @@ dispositivos = {
         "tipo": "Cafetera espresso automática",
         "marca": "De'Longhi",
         "modelo": "Magnifica S ECAM 22.110.B",
-        "programado": "auto",
+        "control/consumo":"auto",
+        "modo":"auto",
         "estado": False
     },
     "luz": {
@@ -21,6 +23,8 @@ dispositivos = {
         "modelo": "C-1007N/T",
         "voltaje": 220,
         "color": "blanco cálido",
+        "control/consumo":"auto",
+        "modo":"auto",
         "estado": False,
     }
 }

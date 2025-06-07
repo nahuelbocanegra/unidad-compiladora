@@ -83,10 +83,15 @@ def mostrar_menu():
             cambiar_estado(nombre, estado)
 
         elif opcion == "6":
-            nombre = input(" Ingrese el nombre del dispositivo: ")
-            clave = input(" Desea cambiar el modo (ej: 'auto', 'manual'): ")
-            valor = input(" Ingrese el nuevo valor: ")
-            modificar_dispositivo(nombre, **{clave: valor})
+             nombre = input("Ingrese el nombre del dispositivo: ")
+             clave = input("¿Qué función desea modificar? (solo 'control/consumo' o 'modo'): ")
+    
+             if clave in ["control/consumo", "modo"]:
+                valor = input("Ingrese el nuevo valor: ")
+                modificar_dispositivo(nombre, **{clave: valor})
+             else:
+               print("Error: Solo puede modificar 'control/consumo' o 'modo'.")
+
 
         elif opcion == "7":
             nombre = input(" Ingrese el nombre del dispositivo: ")
